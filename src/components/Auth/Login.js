@@ -19,9 +19,9 @@ function Login() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    API_URL = 'backend-sistema-de-login-gpt-o1-production.up.railway.app'
+    const API_URL = 'https://backend-sistema-de-login-gpt-o1-production.up.railway.app'; // URL completa do Railway
     try {
-      const res = await axios.post(`/api/auth/login`, formData);
+      const res = await axios.post(`${API_URL}/api/auth/login`, formData); // Use a URL completa
       console.log('Resposta da API:', res);
       localStorage.setItem('token', res.data.token);
       setMessage('Login bem-sucedido!');
