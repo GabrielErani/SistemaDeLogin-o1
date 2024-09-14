@@ -8,7 +8,6 @@ function Login() {
     email: '',
     password: '',
   });
-  const API_URL = 'backend-sistema-de-login-gpt-o1-production.up.railway.app'
   const { email, password } = formData;
 
   const [message, setMessage] = useState('');
@@ -18,16 +17,18 @@ function Login() {
   const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
+  const API_URL = "https://backend-sistema-de-login-gpt-o1-production.up.railway.app"; // URL do back-end no Railway
+
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
       const res = await axios.post(`${API_URL}/api/auth/login`, formData);
-      console.log('Resposta da API:', res);
-      localStorage.setItem('token', res.data.token);
-      setMessage('Login bem-sucedido!');
-      navigate('/dashboard');
+      console.log('Login bem-sucedido!', res.data);
     } catch (err) {
       console.error('Erro na requisição:', err);
+    }
+  };
+  
       if (err.response && err.response.data && err.response.data.msg) {
         setMessage(err.response.data.msg);
       } else {
