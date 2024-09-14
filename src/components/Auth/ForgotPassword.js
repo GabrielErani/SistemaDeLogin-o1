@@ -8,11 +8,12 @@ function ForgotPassword() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
+    const API_URL = 'https://backend-sistema-de-login-gpt-o1-production.up.railway.app'; // URL completa do back-end no Railway
     try {
-      const res = await axios.post('/api/auth/forgot-password', { email });
+      const res = await axios.post(`${API_URL}/api/auth/forgot-password`, { email });
       setMessage('E-mail para redefinição de senha enviado!');
     } catch (err) {
-      setMessage(err.response.data.msg || 'Erro ao enviar e-mail');
+      setMessage(err.response?.data?.msg || 'Erro ao enviar e-mail');
     }
   };
 

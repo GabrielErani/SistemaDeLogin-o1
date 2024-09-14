@@ -18,12 +18,12 @@ function Register() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
+    const API_URL = 'https://backend-sistema-de-login-gpt-o1-production.up.railway.app'; // URL completa do back-end no Railway
     try {
-      const res = await axios.post('/api/auth/register', formData);
+      const res = await axios.post(`${API_URL}/api/auth/register`, formData);
       setMessage('Registrado com sucesso!');
-      // Redirecionar ou executar ação adicional
     } catch (err) {
-      setMessage(err.response.data.msg || 'Erro ao registrar');
+      setMessage(err.response?.data?.msg || 'Erro ao registrar');
     }
   };
 
