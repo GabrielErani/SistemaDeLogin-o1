@@ -21,7 +21,7 @@ function Login() {
     e.preventDefault();
     API_URL = 'backend-sistema-de-login-gpt-o1-production.up.railway.app'
     try {
-      const res = await axios.post(`${API_URL}/api/auth/login`, formData);
+      const res = await axios.post(`/api/auth/login`, formData);
       console.log('Resposta da API:', res);
       localStorage.setItem('token', res.data.token);
       setMessage('Login bem-sucedido!');
