@@ -21,7 +21,7 @@ function Login() {
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('/api/auth/login', formData);
+      const res = await axios.post('backend-sistema-de-login-gpt-o1.railway.internal/login', formData);
       console.log('Resposta da API:', res);
       localStorage.setItem('token', res.data.token);
       setMessage('Login bem-sucedido!');
