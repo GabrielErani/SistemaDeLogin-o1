@@ -8,7 +8,7 @@ function Login() {
     email: '',
     password: '',
   });
-  const API_URL = 'backend-sistema-de-login-gpt-o1.railway.internal'
+  const API_URL = 'backend-sistema-de-login-gpt-o1-production.up.railway.app'
   const { email, password } = formData;
 
   const [message, setMessage] = useState('');
