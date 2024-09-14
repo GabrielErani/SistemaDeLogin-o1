@@ -8,7 +8,7 @@ function Login() {
     email: '',
     password: '',
   });
-
+  const API_URL = 'backend-sistema-de-login-gpt-o1.railway.internal'
   const { email, password } = formData;
 
   const [message, setMessage] = useState('');
@@ -21,7 +21,7 @@ function Login() {
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('backend-sistema-de-login-gpt-o1.railway.internal/login', formData);
+      const res = await axios.post(`${API_URL}/api/auth/login`, formData);
       console.log('Resposta da API:', res);
       localStorage.setItem('token', res.data.token);
       setMessage('Login bem-sucedido!');
