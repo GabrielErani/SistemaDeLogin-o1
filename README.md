@@ -1,7 +1,7 @@
 
-# Sistema de Login - Front-end
+# Sistema de Login - Front-end - CHATGPT-o1
 
-Este projeto de front-end foi desenvolvido **totalmente** pelo **chatgpt-o1** para fins de teste e aprendizado.
+# Este projeto de front-end foi desenvolvido **totalmente** pelo **chatgpt-o1** para testar o novo modelo da OpenAI.
 
 ## Tecnologias Utilizadas
 - React
